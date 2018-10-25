@@ -6,7 +6,13 @@ function makeInputArray(inputString, separator) {
 
 function pigLatinTranslator(inputArray, vowels) {
   // var newArray =[];
-  if (yArray.includes(inputArray[2])) {
+  if (qArray.includes(inputArray[0])) {
+    var qAtBeginning = inputArray.slice(0,2);
+    var qAddedToEnd = inputArray.slice(2);
+    return (qAddedToEnd.concat(qAtBeginning)).concat(["a", "y"]);
+  }
+
+  else if (yArray.includes(inputArray[2])) {
     var yBeginning = inputArray.slice(0,2);
     var yEnd = inputArray.slice(2);
     return (yEnd.concat(yBeginning)).concat(["a","y"]);
