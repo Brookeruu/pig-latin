@@ -11,7 +11,6 @@ function pigLatinTranslator(inputArray, vowels) {
     var qAddedToEnd = inputArray.slice(2);
     return (qAddedToEnd.concat(qAtBeginning)).concat(["a", "y"]);
   }
-
   else if (yArray.includes(inputArray[2])) {
     var yBeginning = inputArray.slice(0,2);
     var yEnd = inputArray.slice(2);
@@ -24,7 +23,13 @@ function pigLatinTranslator(inputArray, vowels) {
 
   else if (vowels.includes(inputArray[0])) {
     return inputArray.concat(["w","a","y"])
-    debugger
+  }
+
+  else if (consonantArray.includes(inputArray[0]) &&
+          qArray.includes(inputArray[1])) {
+          var consonantFollowedByQ = inputArray.slice(0,3);
+          var consonantAndQAddedToEnd = inputArray.slice(3);
+          return (consonantAndQAddedToEnd.concat(consonantFollowedByQ)).concat(["a","y"]);
   }
   else if (consonantArray.includes(inputArray[0]) &&
            consonantArray.includes(inputArray[1]) &&
